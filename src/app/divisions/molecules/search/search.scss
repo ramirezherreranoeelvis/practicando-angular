@@ -1,0 +1,14 @@
+.search {
+        display: flex;
+        justify-content: space-between;
+        width: 330px;
+        border: 1px solid #ccc;
+        padding: 10px;
+}
+
+app-input,
+app-button {
+        display: inline-flex;
+        background-color: #ff0808;
+        vertical-align: top;
+}

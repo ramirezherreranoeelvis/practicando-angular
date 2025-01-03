@@ -1,0 +1,64 @@
+<h4>Cuando</h4>
+@defer (when isImageVisible) {
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@loading (after 2000ms; minimum 2s){
+<p>loading...😴😴😴😴</p>
+}@placeholder {
+<p>While ther's no content...🤔</p>
+}
+@if (!isImageVisible) {
+<button (click)="showImage()">See Image</button>
+}
+<!-- Cuando pase el lapso de tiempo -->
+<br>
+<h4>Con timer</h4>
+@defer (on timer(2000ms)) {
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@placeholder {
+EL de timer aun no carga
+}
+
+<!-- 
+        con (on viewport) -> para cargar una vez que se vaya al lugar del dom (al fondo abajo por ejemplo) obligatorio placeholder 
+        vierport se peude hacer que se cargue segundo a un elemento referenciado (#nombre elmeento)
+-->
+<br>
+<!-- tambien hay (hover por si pasa encima de placeholder), SE PEUDE ESPECIFICAR ELEMENTO CON (#nombre elmeento)-->
+<h4>Hover</h4>
+@defer (on hover) {
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@placeholder {
+<p class="">pasa por ensima de mi mrd</p>
+}
+
+<br>
+<!-- para cuando termine de cargar todo, osea a final -->
+<h4>Idle</h4>
+@defer (on idle) {
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@placeholder {
+Cuando termina de cargar
+}
+
+<br>
+<!-- Cuando hay interaccion(click) -->
+<h4>interaction</h4>
+@defer (on interaction ){
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@placeholder {
+<p>interactura conmigo(click)</p>
+}
+
+<!-- SIRVE CONVINAR -->
+<h4>Prefetch</h4>
+@defer (on interaction; prefetch on idle ){
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FEC2GBADKHaYqqerfdCqnQHaEo%26pid%3DApi&f=1&ipt=8ba6241c30471d7a39f79b7e53383663f458b89c956859b55e1f31792b41fe33&ipo=images"
+        alt="Differed Image" height="100">
+}@placeholder {
+<p>Interactuaron conmigo o se cargo</p>
+}
